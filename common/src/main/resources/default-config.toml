@@ -1,0 +1,31 @@
+# Whether or not backups are enabled or not.
+enabled = true
+
+# The directory, relative to the base server/minecraft folder, to back up to.
+backup-directory = "backups"
+
+# Whether to put every backup and its metadata in a subfolder of the backup directory,
+# or to put them all in the root of the backup directory.
+use-subfolders = true
+
+# What compression algorithm to use.
+# This is the extension of the file, e.g. `zstd` for `.zstd` files.
+# You can see supported methods here: https://commons.apache.org/proper/commons-compress/apidocs/org/apache/commons/compress/compressors/CompressorStreamFactory.html
+# zstd is a good default.
+compression-algorithm = "zstd"
+
+# What compression level to use.
+# This varies by compression method; setting this to -1 will use the default level for the given compression algorithm.
+# If it is set to a value that is not supported by the compression algorithm, it will use the default compression level instead, and print a non-fatal error to the log.
+# This is ignored if the compression algorithm does not support compression levels.
+compression-level = -1
+
+# When to make backups.
+# This defaults to every 6 hours, but you can change it to whatever you want.
+# These use the GAE cron format, which is documented here: https://cloud.google.com/appengine/docs/legacy/standard/java/config/cronref#example
+backup-schedule = ["every day 00:00", "every day 06:00", "every day 12:00", "every day 18:00"]
+
+# How many backups to keep by default.
+# When the number of backups exceeds this number, the oldest backups will be deleted.
+# If this is set to 0, all backups will be kept.
+backups-to-keep = 10

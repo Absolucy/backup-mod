@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "moe.absolucy.backup.mixin.forge",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+	"defaultRequire": 1
+  }
+}
